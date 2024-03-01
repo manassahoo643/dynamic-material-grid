@@ -1,0 +1,18 @@
+{
+  "name": "dynamic-material-grid",
+  "version": "0.0.1",
+  "description": "Dynamic Material Grid is a powerful Angular library designed to enhance your table components. Inspired by Angular Material Table, it brings server-side pagination, sorting, and searching capabilities, along with user-friendly features like edit, view, and delete buttons for each row. The library also introduces sticky columns for improved horizontal scrolling visibility and provides masking options for phone numbers, currency, and dates. Elevate your table experience with Dynamic Material Grid and streamline the presentation and interaction of your data.",
+  "peerDependencies": {
+    "@angular/common": "^14.2.0",
+    "@angular/core": "^14.2.0",
+    "@angular/forms": "^14.3.0",
+    "@angular/material": "^14.0.0",
+    "ngx-mask": "^14.2.4"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "keywords": ["angular", "material", "table", "grid", "pagination", "sorting", "searching", "sticky columns", "masking", "edit", "view", "delete"],
+  "author": "Manas Sahoo",
+  "license": "MIT"
+}

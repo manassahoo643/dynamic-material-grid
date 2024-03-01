@@ -1,0 +1,79 @@
+<div class="datatablesec table-responsive sticky-pagination-table">
+  <div class="matTable">
+    <div class="matSearch">
+      <mat-form-field appearance="outline"  style="padding: 0!important; margin-bottom: -15px; 
+        position: relative;
+        flex: auto;
+        min-width: 0;
+        width: 180px;">
+        <input matInput name="columnSearch" [(ngModel)]="columnSearch" (input)="applyFilter($event)" placeholder="Search" #input class="searchfield"
+          style="padding:0;text-align: left;font-size: 17px;" />
+        <span *ngIf="columnSearch" matSuffix mat-icon-button aria-label="Clear" style="background: none">
+          <mat-icon style="font-size: 21px;padding:0; " (click)="clearField()">close</mat-icon>
+        </span>
+      </mat-form-field>
+    </div>
+
+ 
+    <div class="sticky-container sticky-borderview">
+      <table mat-table [dataSource]="dataSource" class="table table-v-middle table-bordered " matSort
+        multiTemplateDataRows #dataTable>
+        <ng-container [matColumnDef]="column.id" *ngFor="let column of visibleColumns" [sticky]="column.sticky"
+          [stickyEnd]="column.stickyEnd">
+          <!-- Header cell -->
+          <th mat-header-cell [disabled]="column.id == 'action'" *matHeaderCellDef mat-sort-header
+            [style.min-width.px]="column.columnWidths" [style.width.px]="column.columnWidths"  [style.background-color]="headerBackgroudColour"
+            [ngClass]="{'sticky-column': column.sticky,'centerAligned':column.centerAligned}">{{
+            column.label }}
+          </th>
+          <!-- Body cell -->
+          <td *matCellDef="let row; let i = dataIndex" [style.min-width.px]="column.columnWidths"
+            [style.width.px]="column.columnWidths"
+            [ngClass]="{'sticky-column': column.sticky, 'non-sticky-column': !column.sticky,'centerAligned':column.centerAligned}">
+            <ng-container
+              *ngIf="column.id !== 'action' && column.phoneField != true && column.dateField != true && column.currencyField != true ">
+              {{ row[column.id] }}
+            </ng-container>
+            <ng-container *ngIf="column.phoneField == true">
+              {{ row[column.id] | mask: '(000) 000-0000' }}
+            </ng-container>
+            <ng-container *ngIf="column.dateField == true">
+              {{ row[column.id] | date: 'MM/dd/yyyy' }}
+            </ng-container>
+            <ng-container *ngIf="column.currencyField == true && row[column.id] != null ">
+              ${{formatMoneydisp(row[column.id])}}
+            </ng-container>
+
+            <ng-container *ngIf="column.id == 'action'">
+
+              <ng-container>
+                <button type="button" class="btn btn-info pagingtable_icons btn-sm " (click)="viewfun(row)"
+                  *ngIf="isViewButton" data-bs-toggle="tooltip" title="View"><i class="fas fa-eye align-middle"
+                    aria-hidden="true"></i></button>
+
+                <button type="button" class="btn btn-success pagingtable_icons btn-sm " data-bs-toggle="tooltip"
+                  *ngIf="isEditButton" data-bs-placement="top" (click)="editfun(row)" title="Edit"><i
+                    class="fas fa-edit align-middle" aria-hidden="true"></i></button>
+
+                <button type="button" class="btn btn-danger pagingtable_icons btn-sm" data-bs-toggle="tooltip"
+                  *ngIf="isDeleteButton" (click)="Deletefun(row)" data-bs-placement="top" title="Delete"><i
+                    class="fas fa-trash align-middle" aria-hidden="true"></i></button>
+              </ng-container>
+            </ng-container>
+          </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="visibleColumnsIds" class="matHeaderRow"></tr>
+
+        <tr mat-row mat-row-top *matRowDef="
+              let row;
+              let i = dataIndex;
+              columns: visibleColumnsIds
+            " class="matRowVisible visible-row-{{ row.id }}"></tr>
+      </table>
+    </div>
+
+    <mat-paginator #paginator [pageSizeOptions]="pageOptions" [length]="totalRecords" [pageIndex]="currentPage"
+      [pageSize]="pageSize" (page)="pageChanged($event)" aria-label="Select page" showFirstLastButtons>
+    </mat-paginator>
+  </div>
+</div>
