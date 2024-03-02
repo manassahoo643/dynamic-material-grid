@@ -67,14 +67,19 @@ Define options in your consuming component:
 ];
 ```
 
-The sticky property in a column configuration is used to make a specific column "sticky" or fixed while scrolling horizontally in a table. When sticky is set to true for a column, it means that the column will remain visible even when the user scrolls horizontally through the table.
+The **sticky** property in a column configuration is used to make a specific column "sticky" or fixed while scrolling horizontally in a table. When **`sticky`** is set to **`true`** for a column, it means that the column will remain visible even when the user scrolls horizontally through the table.
 
-ColumnWidths is optional parameters and can be used if you want to specify width for each columns.
+**ColumnWidths** is optional parameters and can be used if you want to specify width for each columns.
 
-Similarly you can get masking for individual column by using phoneField : true ,dateField : true , currencyField : true
+Similarly you can get **masking** for individual column by using **``phoneField : true``** ,**``dateField : true``** , **``currencyField : true``**
+ 
+The **`centerAligned`** parameter is optional and can be used to make text aligned at the center for specified columns.
 
-In template use lib-dynamic-material-grid component with your options
+When **`centerAligned`** is set to `true`, the text in the specified columns will be centered.
+
+In template use **`<lib-dynamic-material-grid>`** component with your options
 ```html
+<!-- add on your Html page -->
  <lib-dynamic-material-grid 
 [headerBackgroundColor]="'#042e6f'"
 [dataSource]="dataSource" 
