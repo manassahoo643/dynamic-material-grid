@@ -15,8 +15,6 @@ Dynamic Material Grid is a versatile Angular library that enhances your table ex
 
 ### Step-1 : install the package
 
-#### NPM
-
 ```bash 
 npm i dynamic-material-grid --save
 ```
@@ -37,8 +35,14 @@ DynamicMaterialGridModule
 })
 export class YourAppModuleClass {}
 ```
+### Step-3 : Include a theme:
+To use an Angular Material prebuilt theme, add the following line to your project's styles file (e.g., `styles.scss` or `styles.css`):
+```css
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+```
 
-### Step-3 : Add BrowserAnimationsModule
+
+### Step-4 : Add BrowserAnimationsModule
 
 Ensure that the BrowserAnimationsModule is imported in your project. If not, add it to your module as well.
 
@@ -55,6 +59,8 @@ export class YourAppModuleClass {}
 Define options in your consuming component:
 
 ```typescript
+import { MatTableDataSource } from '@angular/material/table';
+
  public dataSource: any = new MatTableDataSource();
 
  columns: Column[] = [
@@ -83,7 +89,7 @@ In template use **`<lib-dynamic-material-grid>`** component with your options
  <lib-dynamic-material-grid 
 [headerBackgroundColor]="'#042e6f'"
 [dataSource]="dataSource" 
-[columnsdef]="yourColumns" 
+[columnsdef]="columns" 
 [totalRecords]="totalRecordsCount" 
 [isViewButton]="true" 
 [isEditButton]="true" 
