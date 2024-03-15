@@ -1,6 +1,8 @@
 # Dynamic Material Grid
 
 ## Overview
+![demo table](image-1.png)
+
 
 Dynamic Material Grid is a versatile Angular library that enhances your table experience. It offers:
 
@@ -10,6 +12,12 @@ Dynamic Material Grid is a versatile Angular library that enhances your table ex
 - **Masking options for phone numbers, currency, and dates**
 - **Customizable column headers**
 - **Responsive design to fit any screen size**
+
+See  the [live demo here](https://dynamic-material-grid-y571u7-knnmhn.stackblitz.io).
+
+The source code can be found on StackBlitz [here](https://stackblitz.com/edit/dynamic-material-grid-y571u7-knnmhn?file=src%2Fapp%2Fapp.component.html)
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.0.
 
 ## Installation
 
@@ -40,9 +48,17 @@ To use an Angular Material prebuilt theme, add the following line to your projec
 ```css
 @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
 ```
+ 
+### Step-4 : include the link on  your index.html file
 
+```html
+<link
+  href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet"
+/>
+```
 
-### Step-4 : Add BrowserAnimationsModule
+### Step-5 : Add BrowserAnimationsModule
 
 Ensure that the BrowserAnimationsModule is imported in your project. If not, add it to your module as well.
 
