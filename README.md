@@ -2,7 +2,7 @@
 
 ## Overview
 
-![demo pic](image-2.png)
+![demo pic](image.png)
 
 
 Dynamic Material Grid is a versatile Angular library that enhances your table experience. It offers:
