@@ -1,7 +1,7 @@
 # Dynamic Material Grid
 
 ## Overview
-![demo table](image-1.png)
+![demo table](image.png)
 
 
 Dynamic Material Grid is a versatile Angular library that enhances your table experience. It offers:
@@ -15,7 +15,7 @@ Dynamic Material Grid is a versatile Angular library that enhances your table ex
 
 See  the [live demo here](https://dynamic-material-grid-y571u7-knnmhn.stackblitz.io).
 
-The source code can be found on StackBlitz [here](https://stackblitz.com/edit/dynamic-material-grid-y571u7-knnmhn?file=src%2Fapp%2Fapp.component.html)
+The source code can be found on StackBlitz [here](https://stackblitz.com/edit/dynamic-material-grid-y571u7-bjwfes?file=src%2Fapp%2Fapp.module.ts)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.0.
 
